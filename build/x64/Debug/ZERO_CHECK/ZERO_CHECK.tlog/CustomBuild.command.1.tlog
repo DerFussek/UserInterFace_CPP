@@ -1,0 +1,10 @@
+^C:\USERS\TILDU\DESKTOP\CODE\FINAL\BUILD\CMAKEFILES\D21AD496597B8935C168DAC53957B502\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\cmake-4.1.0-windows-x86_64\bin\cmake.exe" -SC:/Users/tildu/Desktop/Code/Final -BC:/Users/tildu/Desktop/Code/Final/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/tildu/Desktop/Code/Final/build/Final.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,51 @@
+cmake_minimum_required(VERSION 3.24)
+project(Final LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# --- Output: /out ---
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/out")
+foreach(cfg IN ITEMS Debug Release RelWithDebInfo MinSizeRel)
+  string(TOUPPER "${cfg}" cfg_up)
+  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${cfg_up} "${CMAKE_SOURCE_DIR}/out")
+endforeach()
+
+# --- Collect ALL sources under /src ---
+file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS
+  "${CMAKE_SOURCE_DIR}/src/*.cpp"
+  "${CMAKE_SOURCE_DIR}/src/*.c"
+  "${CMAKE_SOURCE_DIR}/src/*.cc"
+  "${CMAKE_SOURCE_DIR}/src/*.cxx"
+)
+
+add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
+
+# --- Include paths ---
+target_include_directories(${PROJECT_NAME} PRIVATE
+  "${CMAKE_SOURCE_DIR}/include"
+)
+
+# --- SFML (local) ---
+set(SFML_ROOT "${CMAKE_SOURCE_DIR}/lib/SFML-3.0.2")
+set(SFML_DIR  "${SFML_ROOT}/lib/cmake/SFML")
+
+find_package(SFML 3 REQUIRED COMPONENTS System Window Graphics Audio Network)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE
+  SFML::System
+  SFML::Window
+  SFML::Graphics
+  SFML::Audio
+  SFML::Network
+)
+
+# --- Copy SFML DLLs next to the EXE (Windows) ---
+if(WIN32)
+  add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            "${SFML_ROOT}/bin"
+            "$<TARGET_FILE_DIR:${PROJECT_NAME}>"
+    COMMENT "Copying SFML runtime DLLs to out/"
+  )
+endif()
