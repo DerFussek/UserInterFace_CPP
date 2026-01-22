@@ -1,0 +1,181 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package core {
+  class Application {
+    - sf::RenderWindow m_app
+    - sf::Clock m_clock
+    - StateStack m_states
+    + Application(size: sf::Vector2u, name: std::string)
+    + run(): void
+    - processEvents(): void
+    - update(dt: float): void
+    - render(): void
+    + app(): sf::RenderWindow&
+  }
+}
+
+package state {
+  abstract class State {
+    # StateStack& m_stack
+    + State(stack: StateStack&)
+    + ~State()
+    + handleEvent(e: sf::Event): void
+    + update(dt: float): void
+    + render(target: sf::RenderTarget): void
+    + onResize(newSize: sf::Vector2u): void
+  }
+
+  class StateStack {
+    - std::vector<std::unique_ptr<State>> m_states
+    + push(s: std::unique_ptr<State>): void
+    + pop(): void
+    + clear(): void
+    + top(): State*
+    + handleEvent(e: sf::Event): void
+    + update(dt: float): void
+    + render(target: sf::RenderTarget): void
+    + onResize(newSize: sf::Vector2u): void
+  }
+
+  class MainMenuState {
+    - UIContext m_ui
+    - Panel m_root
+    - VBoxLayout m_vbox
+    - Panel* m_row
+    - HBoxLayout m_hbox
+    + MainMenuState(stack: StateStack&, font: sf::Font, windowSize: sf::Vector2u)
+    + handleEvent(e: sf::Event): void
+    + update(dt: float): void
+    + render(target: sf::RenderTarget): void
+    + onResize(newSize: sf::Vector2u): void
+  }
+
+  class GameState {
+    + GameState(stack: StateStack&, font: sf::Font, windowSize: sf::Vector2u)
+    + handleEvent(e: sf::Event): void
+    + update(dt: float): void
+    + render(target: sf::RenderTarget): void
+    + onResize(newSize: sf::Vector2u): void
+  }
+
+  class EmptyState {
+    + EmptyState(stack: StateStack&)
+    + handleEvent(e: sf::Event): void
+    + update(dt: float): void
+    + render(target: sf::RenderTarget): void
+    + onResize(newSize: sf::Vector2u): void
+  }
+}
+
+package ui {
+  class UIContext {
+    + Theme theme
+    + Widget* hovered
+    + Widget* focused
+  }
+
+  class Theme {
+    + font: sf::Font*
+    + fontSize: uint
+    + textColor: sf::Color
+    + panelColor: sf::Color
+    + buttonIdle: sf::Color
+    + buttonHover: sf::Color
+    + buttonPressed: sf::Color
+    + buttonDisabled: sf::Color
+    + outlineColor: sf::Color
+    + outlineThickness: float
+    + padding: float
+    + spacing: float
+  }
+
+  abstract class Widget {
+    # m_pos: sf::Vector2f
+    # m_size: sf::Vector2f
+    # m_visible: bool
+    # m_enabled: bool
+    + setPosition(p: sf::Vector2f): void
+    + setSize(s: sf::Vector2f): void
+    + bounds(): sf::FloatRect
+    + handleEvent(e: sf::Event, ctx: UIContext): bool
+    + update(dt: float, ctx: UIContext): void
+    + draw(t: sf::RenderTarget, ctx: UIContext): void
+  }
+
+  class Container {
+    # m_children: std::vector<std::unique_ptr<Widget>>
+    + emplace<T>(...): T&
+    + add(w: std::unique_ptr<Widget>): void
+    + children(): vector<unique_ptr<Widget>>&
+    + handleEvent(e: sf::Event, ctx: UIContext): bool
+    + update(dt: float, ctx: UIContext): void
+    + draw(t: sf::RenderTarget, ctx: UIContext): void
+  }
+
+  class Panel {
+    + draw(t: sf::RenderTarget, ctx: UIContext): void
+  }
+
+  class Label {
+    - m_string: sf::String
+    - m_charSize: uint
+    + setString(s: sf::String): void
+    + setCharacterSize(px: uint): void
+    + draw(t: sf::RenderTarget, ctx: UIContext): void
+  }
+
+  class Button {
+    - m_string: sf::String
+    - m_charSize: uint
+    - m_pressedInside: bool
+    - m_onClick: std::function<void()>
+    + setString(s: sf::String): void
+    + setCharacterSize(px: uint): void
+    + setOnClick(fn: std::function<void()>): void
+    + handleEvent(e: sf::Event, ctx: UIContext): bool
+    + draw(t: sf::RenderTarget, ctx: UIContext): void
+  }
+
+  class VBoxLayout {
+    + padding: float
+    + spacing: float
+    + apply(c: Container): void
+  }
+
+  class HBoxLayout {
+    + padding: float
+    + spacing: float
+    + apply(c: Container): void
+  }
+}
+
+' --- Beziehungen ---
+core.Application *-- state.StateStack
+
+state.StateStack o-- state.State
+state.State <|-- state.MainMenuState
+state.State <|-- state.GameState
+state.State <|-- state.EmptyState
+
+state.MainMenuState *-- ui.UIContext
+state.MainMenuState *-- ui.Panel
+state.MainMenuState *-- ui.VBoxLayout
+state.MainMenuState *-- ui.HBoxLayout
+
+ui.Widget <|-- ui.Container
+ui.Container <|-- ui.Panel
+ui.Widget <|-- ui.Label
+ui.Widget <|-- ui.Button
+
+ui.UIContext *-- ui.Theme
+ui.Container o-- ui.Widget
+
+ui.VBoxLayout ..> ui.Container : apply()
+ui.HBoxLayout ..> ui.Container : apply()
+
+' --- Resize-Fluss ---
+core.Application ..> state.StateStack : onResize(newSize)
+state.StateStack ..> state.State : onResize(newSize)
+
+@enduml

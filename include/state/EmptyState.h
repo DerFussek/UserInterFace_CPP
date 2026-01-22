@@ -8,10 +8,5 @@ public:
     void handleEvent(const sf::Event&) override {}
     void update(float) override {}
 
-    void render(sf::RenderTarget& target) override {
-        sf::RectangleShape r({200.f, 120.f});
-        r.setPosition({50.f, 50.f});
-        r.setFillColor(sf::Color::Red);
-        target.draw(r);
-    }
+    void render(sf::RenderTarget& target) override {}
 };

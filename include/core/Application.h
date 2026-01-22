@@ -8,46 +8,44 @@
 #include "state/EmptyState.h"
 #include "state/MainMenuState.h"
 
-
 /*
-Aufgaben:
+    Tasks:
 
-Erzeugt das Fenster (sf::RenderWindow)
+    - Initializes the window (sf::RenderWindow)
+    - only class that interacts directly with the window
+    - Runs the main loop
+      > Process events
+      > Update logic
+      > Render
+    - Manages timing (delta time)
 
-Führt die Hauptschleife aus
-—> Events verarbeiten
-—> Logik updaten
-—> Rendern
-
-Steuert das Timing (Delta-Time)
-
-Ist die einzige Klasse, die direkt mit dem Window arbeitet
-
-
-Funktion:
-
-Ablauf + Infrastruktur
+    Function:
+    - Workflow + Infrastructure
 */
 
 class Application {
     private:
-        sf::RenderWindow m_app;
-        sf::Clock m_clock;
-        sf::Font m_font;
+        sf::RenderWindow m_app; // window object
+        sf::Clock m_clock;      // for delta time
+        sf::Font m_font;        // standart Font
         
-        StateStack m_states;
+        StateStack m_states;    // manages the states (scenes)
 
-        void processEvents() {
+        void processEvents() { 
             while (const auto e = m_app.pollEvent()) {
                 if (e->is<sf::Event::Closed>())
                     m_app.close();
 
                 if (e->is<sf::Event::Resized>()) {
-                    const auto s = e->getIf<sf::Event::Resized>();
-                    m_app.setView(sf::View(sf::FloatRect({0.0f, 0.0f},
-                                        {static_cast<float>(s->size.x), 
-                                         static_cast<float>(s->size.y)})));
+                    const auto* r = e->getIf<sf::Event::Resized>();
+                    if (r->size.x == 0 || r->size.y == 0) continue;
+
+                    m_app.setView(sf::View(sf::FloatRect({0.f, 0.f},
+                        {(float)r->size.x, (float)r->size.y})));
+
+                    m_states.onResize(r->size);   // <-- State bekommt neue Größe
                 }
+
 
                 if (auto* s = m_states.top()) s->handleEvent(*e);
             }
@@ -75,10 +73,10 @@ class Application {
         {
             m_app.setVerticalSyncEnabled(true);
 
-            if (!m_font.openFromFile("../assets/Montserrat/static/Montserrat-Regular.ttf"))
+            if (!m_font.openFromFile("../assets/Montserrat/static/Montserrat-Regular.ttf")) //Load Standart font
                 throw std::runtime_error("Font not found");
 
-            m_states.push(std::make_unique<MainMenuState>(m_states, m_font, m_app.getSize()));
+            m_states.push(std::make_unique<MainMenuState>(m_states, m_font, m_app.getSize())); // MainMenuState as start scene
         }
 
 

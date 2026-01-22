@@ -1,7 +1,6 @@
 #include "state/StateStack.h"
 #include "state/State.h"
 
-
 void StateStack::push(std::unique_ptr<State> s) {
     m_states.emplace_back(std::move(s));
 }
@@ -28,4 +27,8 @@ void StateStack::update(float dt) {
 
 void StateStack::render(sf::RenderTarget &target) {
     if (auto* s = top()) s->render(target);
+}
+
+void StateStack::onResize(sf::Vector2u s) {
+    if (auto* st = top()) st->onResize(s);
 }

@@ -1,6 +1,23 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+/*
+    Purpose:
+    Abstract base class for all UI elements (Widgets). 
+    Provides a standardized interface and common properties for UI components.
+
+    Tasks:
+    - Stores fundamental attributes (position, size, visibility, and interaction state).
+    - Provides accessors for spatial calculations (e.g., bounding boxes).
+    - Defines a mandatory interface for event handling, logic updates, and rendering.
+
+    Functionality:
+    - Position/Size Management: Handles spatial placement within the UI.
+    - State Control: Manages whether an element is rendered (visible) or interactable (enabled).
+    - Event Propagation: handleEvent returns a boolean to indicate if an event was "consumed" 
+      (preventing it from reaching elements behind it).
+*/
+
 struct UIContext;
 
 class Widget {

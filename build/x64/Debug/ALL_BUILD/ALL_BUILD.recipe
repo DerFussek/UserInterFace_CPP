@@ -2,13 +2,13 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\tildu\Desktop\Code\Final\build\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\tildu\Desktop\Code\Final\out\Final.exe</FullPath>
+      <FullPath>C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\out\Final.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\tildu\Desktop\Code\Final\build\x64\Debug\ALL_BUILD</FullPath>
+      <FullPath>C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\build\x64\Debug\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

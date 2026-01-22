@@ -3,6 +3,20 @@
 #include <memory>
 #include <vector>
 
+/*
+    Purpose:
+    A composite widget that manages a collection of child elements.
+
+    Tasks:
+    - Ownership: Manages child lifecycles via std::unique_ptr.
+    - Factory: Provides 'emplace' for in-place widget construction.
+    - Propagation: Forwards events, updates, and rendering to all children.
+
+    Key Features:
+    - Hierarchical UI: Enables nested widget structures (Composite Pattern).
+    - Smart Pointers: Ensures automatic memory management.
+*/
+
 class Container : public Widget {
     protected:
         std::vector<std::unique_ptr<Widget>> m_children;
