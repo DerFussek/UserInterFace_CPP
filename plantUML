@@ -137,6 +137,24 @@ package ui {
     + draw(t: sf::RenderTarget, ctx: UIContext): void
   }
 
+  class TextBox {
+    - m_string: sf::String
+    - m_charSize: uint
+    + setString(s: sf::String): void
+    + setCharacterSize(px: uint): void
+    + handleEvent(e: sf::Event, ctx: UIContext): bool
+    + draw(t: sf::RenderTarget, ctx: UIContext): void
+  }
+
+  class MessageBox {
+    - m_string: sf::String
+    - m_charSize: uint
+    + setString(s: sf::String): void
+    + setCharacterSize(px: uint): void
+    + handleEvent(e: sf::Event, ctx: UIContext): bool
+    + draw(t: sf::RenderTarget, ctx: UIContext): void
+  }
+
   class VBoxLayout {
     + padding: float
     + spacing: float
@@ -167,6 +185,8 @@ ui.Widget <|-- ui.Container
 ui.Container <|-- ui.Panel
 ui.Widget <|-- ui.Label
 ui.Widget <|-- ui.Button
+ui.Widget <|-- ui.TextBox
+ui.Widget <|-- ui.MessageBox
 
 ui.UIContext *-- ui.Theme
 ui.Container o-- ui.Widget
@@ -174,7 +194,6 @@ ui.Container o-- ui.Widget
 ui.VBoxLayout ..> ui.Container : apply()
 ui.HBoxLayout ..> ui.Container : apply()
 
-' --- Resize-Fluss ---
 core.Application ..> state.StateStack : onResize(newSize)
 state.StateStack ..> state.State : onResize(newSize)
 
