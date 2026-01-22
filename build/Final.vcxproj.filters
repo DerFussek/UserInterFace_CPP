@@ -28,7 +28,13 @@
     <ClCompile Include="C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\widgets\Label.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\widgets\MessageBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\widgets\Panel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\widgets\TextBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -15,7 +15,7 @@ MainMenuState::MainMenuState(StateStack& stack,
         static_cast<float>(windowSize.y) - 40.f
     });
 
-    auto& title = m_root.emplace<Label>();
+    auto& title = m_root.emplace<MessageBox>();
     title.setString("Main Menu");
     title.setSize({0.f, 50.f});
 
@@ -25,7 +25,6 @@ MainMenuState::MainMenuState(StateStack& stack,
     start.setOnClick([this, &font, windowSize]() {
         m_stack.push(std::make_unique<GameState>(m_stack, font, windowSize));
     });
-
 
     auto& exit = m_root.emplace<Button>();
     exit.setString("Exit");
@@ -55,5 +54,4 @@ void MainMenuState::onResize(sf::Vector2u s) {
     m_root.setSize({(float)s.x - 40.f, (float)s.y - 40.f});
 
     m_layout.apply(m_root);
-    //m_hbox.apply(m_row);
 }

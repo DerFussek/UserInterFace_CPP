@@ -31,7 +31,9 @@ set(OLD_GLOB
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/VBoxLayout.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/widgets/Button.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/widgets/Label.cpp"
+  "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/widgets/MessageBox.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/widgets/Panel.cpp"
+  "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/widgets/TextBox.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

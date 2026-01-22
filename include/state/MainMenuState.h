@@ -9,6 +9,8 @@
 #include "ui/widgets/Button.h"
 #include "ui/layout/VBoxLayout.h"
 #include "ui/layout/HBoxLayout.h"
+#include "ui/widgets/TextBox.h"
+#include "ui/widgets/MessageBox.h"
 
 class MainMenuState : public State {
 private:

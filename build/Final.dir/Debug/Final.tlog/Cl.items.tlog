@@ -7,4 +7,6 @@ C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\HBoxLayout.cpp;C:\Users
 C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\VBoxLayout.cpp;C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\build\Final.dir\Debug\VBoxLayout.obj
 C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\widgets\Button.cpp;C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\build\Final.dir\Debug\Button.obj
 C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\widgets\Label.cpp;C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\build\Final.dir\Debug\Label.obj
+C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\widgets\MessageBox.cpp;C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\build\Final.dir\Debug\MessageBox.obj
 C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\widgets\Panel.cpp;C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\build\Final.dir\Debug\Panel.obj
+C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\widgets\TextBox.cpp;C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\build\Final.dir\Debug\TextBox.obj
