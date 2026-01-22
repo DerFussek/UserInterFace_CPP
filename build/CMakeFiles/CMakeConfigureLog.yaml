@@ -112,7 +112,7 @@ events:
       The output was:
       0
       MSBuild-Version 17.13.19+0d9f5a35a f├╝r .NET Framework
-      Der Buildvorgang wurde am 22.01.2026 00:19:06 gestartet.
+      Der Buildvorgang wurde am 22.01.2026 21:27:40 gestartet.
       
       Projekt "C:\\Users\\tildu\\Documents\\GitHub\\UserInterFace_CPP\\build\\CMakeFiles\\4.1.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" auf Knoten "1" (Standardziele).
       PrepareForBuild:
@@ -150,7 +150,7 @@ events:
           0 Warnung(en)
           0 Fehler
       
-      Verstrichene Zeit 00:00:01.21
+      Verstrichene Zeit 00:00:01.04
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -3511,8 +3511,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/CMakeScratch/TryCompile-e4etra"
-      binary: "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/CMakeScratch/TryCompile-e4etra"
+      source: "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/CMakeScratch/TryCompile-tp1t38"
+      binary: "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/CMakeScratch/TryCompile-tp1t38"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -3526,40 +3526,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/CMakeScratch/TryCompile-e4etra'
+        Change Dir: 'C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/CMakeScratch/TryCompile-tp1t38'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_42583.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_16c3f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild-Version 17.13.19+0d9f5a35a f├╝r .NET Framework
-        Der Buildvorgang wurde am 22.01.2026 00:19:08 gestartet.
+        Der Buildvorgang wurde am 22.01.2026 21:27:41 gestartet.
         
-        Projekt "C:\\Users\\tildu\\Documents\\GitHub\\UserInterFace_CPP\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e4etra\\cmTC_42583.vcxproj" auf Knoten "1" (Standardziele).
+        Projekt "C:\\Users\\tildu\\Documents\\GitHub\\UserInterFace_CPP\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tp1t38\\cmTC_16c3f.vcxproj" auf Knoten "1" (Standardziele).
         PrepareForBuild:
-          Das Verzeichnis "cmTC_42583.dir\\Debug\\" wird erstellt.
+          Das Verzeichnis "cmTC_16c3f.dir\\Debug\\" wird erstellt.
           Die strukturierte Ausgabe ist aktiviert. Die Formatierung der Compilerdiagnose spiegelt die Fehlerhierarchie wider. Weitere Informationen finden Sie unter https://aka.ms/cpp/structured-output.
-          Das Verzeichnis "C:\\Users\\tildu\\Documents\\GitHub\\UserInterFace_CPP\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e4etra\\Debug\\" wird erstellt.
-          Das Verzeichnis "cmTC_42583.dir\\Debug\\cmTC_42583.tlog\\" wird erstellt.
+          Das Verzeichnis "C:\\Users\\tildu\\Documents\\GitHub\\UserInterFace_CPP\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tp1t38\\Debug\\" wird erstellt.
+          Das Verzeichnis "cmTC_16c3f.dir\\Debug\\cmTC_16c3f.tlog\\" wird erstellt.
         InitializeBuildStatus:
-          "cmTC_42583.dir\\Debug\\cmTC_42583.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
-          Aktualisieren des Timestamps von "cmTC_42583.dir\\Debug\\cmTC_42583.tlog\\unsuccessfulbuild".
+          "cmTC_16c3f.dir\\Debug\\cmTC_16c3f.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+          Aktualisieren des Timestamps von "cmTC_16c3f.dir\\Debug\\cmTC_16c3f.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Fo"cmTC_42583.dir\\Debug\\\\" /Fd"cmTC_42583.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\cmake-4.1.0-windows-x86_64\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Fo"cmTC_16c3f.dir\\Debug\\\\" /Fd"cmTC_16c3f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\cmake-4.1.0-windows-x86_64\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++-Optimierungscompiler Version 19.43.34810 f├╝r x64
           Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Fo"cmTC_42583.dir\\Debug\\\\" /Fd"cmTC_42583.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\cmake-4.1.0-windows-x86_64\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Fo"cmTC_16c3f.dir\\Debug\\\\" /Fd"cmTC_16c3f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\cmake-4.1.0-windows-x86_64\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\tildu\\Documents\\GitHub\\UserInterFace_CPP\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e4etra\\Debug\\cmTC_42583.exe" /INCREMENTAL /ILK:"cmTC_42583.dir\\Debug\\cmTC_42583.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/CMakeScratch/TryCompile-e4etra/Debug/cmTC_42583.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/CMakeScratch/TryCompile-e4etra/Debug/cmTC_42583.lib" /MACHINE:X64  /machine:x64 cmTC_42583.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_42583.vcxproj -> C:\\Users\\tildu\\Documents\\GitHub\\UserInterFace_CPP\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e4etra\\Debug\\cmTC_42583.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\tildu\\Documents\\GitHub\\UserInterFace_CPP\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tp1t38\\Debug\\cmTC_16c3f.exe" /INCREMENTAL /ILK:"cmTC_16c3f.dir\\Debug\\cmTC_16c3f.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/CMakeScratch/TryCompile-tp1t38/Debug/cmTC_16c3f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/CMakeScratch/TryCompile-tp1t38/Debug/cmTC_16c3f.lib" /MACHINE:X64  /machine:x64 cmTC_16c3f.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_16c3f.vcxproj -> C:\\Users\\tildu\\Documents\\GitHub\\UserInterFace_CPP\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tp1t38\\Debug\\cmTC_16c3f.exe
         FinalizeBuildStatus:
-          Die Datei "cmTC_42583.dir\\Debug\\cmTC_42583.tlog\\unsuccessfulbuild" wird gel├Âscht.
-          Aktualisieren des Timestamps von "cmTC_42583.dir\\Debug\\cmTC_42583.tlog\\cmTC_42583.lastbuildstate".
-        Die Erstellung von Projekt "C:\\Users\\tildu\\Documents\\GitHub\\UserInterFace_CPP\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e4etra\\cmTC_42583.vcxproj" ist abgeschlossen (Standardziele).
+          Die Datei "cmTC_16c3f.dir\\Debug\\cmTC_16c3f.tlog\\unsuccessfulbuild" wird gel├Âscht.
+          Aktualisieren des Timestamps von "cmTC_16c3f.dir\\Debug\\cmTC_16c3f.tlog\\cmTC_16c3f.lastbuildstate".
+        Die Erstellung von Projekt "C:\\Users\\tildu\\Documents\\GitHub\\UserInterFace_CPP\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tp1t38\\cmTC_16c3f.vcxproj" ist abgeschlossen (Standardziele).
         
         Der Buildvorgang wurde erfolgreich ausgef├╝hrt.
             0 Warnung(en)
             0 Fehler
         
-        Verstrichene Zeit 00:00:00.48
+        Verstrichene Zeit 00:00:00.60
         
       exitCode: 0
   -

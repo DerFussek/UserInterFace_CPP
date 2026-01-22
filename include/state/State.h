@@ -1,8 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class StateStack;
-
 /*
     Tasks:
     - handleEvent(...) > Responds to user input
@@ -22,6 +20,8 @@ class StateStack;
         Specific logic
         Specific rendering
 */
+
+class StateStack;
 
 class State {
     protected:

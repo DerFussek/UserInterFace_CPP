@@ -2,11 +2,11 @@
 #include "state/State.h"
 
 class EmptyState final : public State {
-public:
-    explicit EmptyState(StateStack& stack) : State(stack) {}
+    public:
+        explicit EmptyState(StateStack& stack) : State(stack) {}
 
-    void handleEvent(const sf::Event&) override {}
-    void update(float) override {}
+        void handleEvent(const sf::Event&) override {}
+        void update(float) override {}
 
-    void render(sf::RenderTarget& target) override {}
+        void render(sf::RenderTarget& target) override {}
 };

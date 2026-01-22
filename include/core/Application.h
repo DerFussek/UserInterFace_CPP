@@ -89,5 +89,5 @@ class Application {
             }
         }
         
-    sf::RenderWindow& app() { return m_app; }  
+        sf::RenderWindow& app() { return m_app; }  
 };

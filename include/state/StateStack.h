@@ -5,7 +5,6 @@
 
 /*
     Task:
-
     Manages all states
     Central control over the currently active program state
 
