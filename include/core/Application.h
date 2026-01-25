@@ -46,7 +46,6 @@ class Application {
                     m_states.onResize(r->size);   // <-- State bekommt neue Größe
                 }
 
-
                 if (auto* s = m_states.top()) s->handleEvent(*e);
             }
         }
@@ -55,7 +54,7 @@ class Application {
             m_states.update(dt);
             //TODO
             //ui.update(dt)
-        }
+        }   
 
         void render() {
             m_app.clear();
