@@ -1,6 +1,6 @@
 ^C:\USERS\TILDU\DOCUMENTS\GITHUB\USERINTERFACE_CPP\BUILD\CMAKEFILES\0B7BF902C282C7072A8FF1DCA9E2B6FE\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\cmake-4.1.0-windows-x86_64\bin\cmake.exe" -SC:/Users/tildu/Documents/GitHub/UserInterFace_CPP -BC:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/Final.sln
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/tildu/Documents/GitHub/UserInterFace_CPP -BC:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/Final.slnx
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

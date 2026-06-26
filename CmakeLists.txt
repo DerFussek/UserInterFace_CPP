@@ -1,11 +1,14 @@
 cmake_minimum_required(VERSION 3.24)
+
 project(Final LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # --- Output: /out ---
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/out")
+
 foreach(cfg IN ITEMS Debug Release RelWithDebInfo MinSizeRel)
   string(TOUPPER "${cfg}" cfg_up)
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${cfg_up} "${CMAKE_SOURCE_DIR}/out")
@@ -19,6 +22,10 @@ file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS
   "${CMAKE_SOURCE_DIR}/src/*.cxx"
 )
 
+if(NOT PROJECT_SOURCES)
+  message(FATAL_ERROR "No source files found in ${CMAKE_SOURCE_DIR}/src")
+endif()
+
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 
 # --- Include paths ---
@@ -26,11 +33,27 @@ target_include_directories(${PROJECT_NAME} PRIVATE
   "${CMAKE_SOURCE_DIR}/include"
 )
 
-# --- SFML (local) ---
-set(SFML_ROOT "${CMAKE_SOURCE_DIR}/lib/SFML-3.0.2")
-set(SFML_DIR  "${SFML_ROOT}/lib/cmake/SFML")
+# --- MSVC / Visual Studio 2026 settings ---
+if(MSVC)
+  target_compile_options(${PROJECT_NAME} PRIVATE
+    /W4
+    /permissive-
+    /Zc:__cplusplus
+    /utf-8
+  )
+endif()
 
-find_package(SFML 3 REQUIRED COMPONENTS System Window Graphics Audio Network)
+# --- SFML local ---
+set(SFML_ROOT "${CMAKE_SOURCE_DIR}/lib/SFML-3.0.2")
+set(SFML_DIR  "${SFML_ROOT}/lib/cmake/SFML" CACHE PATH "SFML config directory")
+
+find_package(SFML 3 REQUIRED COMPONENTS
+  System
+  Window
+  Graphics
+  Audio
+  Network
+)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
   SFML::System
@@ -40,7 +63,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
   SFML::Network
 )
 
-# --- Copy SFML DLLs next to the EXE (Windows) ---
+# --- Copy SFML DLLs next to the EXE on Windows ---
 if(WIN32)
   add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory

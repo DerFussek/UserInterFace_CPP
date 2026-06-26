@@ -1,6 +1,6 @@
 ^C:\USERS\TILDU\DOCUMENTS\GITHUB\USERINTERFACE_CPP\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\cmake-4.1.0-windows-x86_64\bin\cmake.exe" -SC:/Users/tildu/Documents/GitHub/UserInterFace_CPP -BC:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build --check-stamp-file C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/tildu/Documents/GitHub/UserInterFace_CPP -BC:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build --check-stamp-file C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
