@@ -22,7 +22,7 @@ void Container::update(float dt, UIContext& ctx) {
             c->update(dt, ctx);
 }
 
-void Container::draw(sf::RenderTarget& t, UIContext& ctx) const {
+void Container::draw(sf::RenderTarget& t, const UIContext& ctx) const {
     if (!m_visible) return;
     for (const auto& c : m_children)
         if (c->visible())

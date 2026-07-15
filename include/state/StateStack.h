@@ -15,14 +15,14 @@
     Tasks:
     push(State) > Activate a new state
     pop()       > Terminate the current state
-    clear()     > Cloase all states
+    clear()     > Close all states
 
     Delegation (Forwarding):
     Events / Updates / Rendering
 
 */
 
-class State;
+#include "state/State.h"
 
 class StateStack {
     private:

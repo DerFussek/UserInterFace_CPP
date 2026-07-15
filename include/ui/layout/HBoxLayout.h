@@ -2,16 +2,16 @@
 #include <SFML/Graphics.hpp>
 
 /*
-    Prupose: 
-    A layout strategy used tp arramge cjoöd wodgtes horizontally within a container.
+    Purpose: 
+    A layout strategy used to arrange child widgets horizontally within a container.
 
     Task:
-    - Defines spacing rules (pading and spacing) for UI elements
-    - Automatically calculates and applies to widgets inside a Contaienr
+    - Defines spacing rules (padding and spacing) for UI elements
+    - Automatically calculates and applies to widgets inside a Container
 
     Functionality:
-    - Horizontal Alignment: Lines up widgtes from left to right
-    - Spacing Managment: 
+    - Horizontal Alignment: Lines up widgets from left to right
+    - Spacing Management: 
         * Padding: The internal offset between the container's border and the widgets.
         * Spacing: The horizontal gap between individual widgets.
 */

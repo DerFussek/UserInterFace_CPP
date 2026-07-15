@@ -1,7 +1,7 @@
 #include "ui/widgets/Panel.h"
 #include "ui/UIContext.h"
 
-void Panel::draw(sf::RenderTarget& t, UIContext& ctx) const {
+void Panel::draw(sf::RenderTarget& t, const UIContext& ctx) const {
     sf::RectangleShape bg;
     bg.setPosition(m_pos);
     bg.setSize(m_size);

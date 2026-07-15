@@ -54,12 +54,14 @@ endif()
 # PROJECT_SOURCES at CMakeLists.txt:18 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/*.cpp")
 set(OLD_GLOB
+  "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/core/Application.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/core/main.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/state/GameState.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/state/MainMenuState.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/state/StateStack.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/Container.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/HBoxLayout.cpp"
+  "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/TextWidget.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/VBoxLayout.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/widgets/Button.cpp"
   "C:/Users/tildu/Documents/GitHub/UserInterFace_CPP/src/ui/widgets/Label.cpp"

@@ -46,6 +46,6 @@ class Widget {
         
         virtual bool handleEvent(const sf::Event& e, UIContext& ctx) = 0; // true = consumed
         virtual void update(float dt, UIContext& ctx) = 0;
-        virtual void draw(sf::RenderTarget& t, UIContext& ctx) const = 0;
+        virtual void draw(sf::RenderTarget& t, const UIContext& ctx) const = 0;
 
 };

@@ -37,7 +37,5 @@ class Container : public Widget {
 
         bool handleEvent(const sf::Event& e, UIContext& ctx) override;
         void update(float dt, UIContext& ctx) override;
-        void draw(sf::RenderTarget& t, UIContext& ctx) const override;
+        void draw(sf::RenderTarget& t, const UIContext& ctx) const override;
 };
-
-

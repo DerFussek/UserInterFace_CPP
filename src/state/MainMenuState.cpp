@@ -6,8 +6,8 @@
 MainMenuState::MainMenuState(StateStack& stack,
                              const sf::Font& font,
                              sf::Vector2u windowSize)
-    : State(stack) {
-    m_ui.theme.font = &font;
+    : State(stack), m_windowSize(windowSize) {
+    m_theme.font = &font;
 
     m_root.setPosition({20.f, 20.f});
     m_root.setSize({
@@ -15,15 +15,15 @@ MainMenuState::MainMenuState(StateStack& stack,
         static_cast<float>(windowSize.y) - 40.f
     });
 
-    auto& title = m_root.emplace<MessageBox>();
+    auto& title = m_root.emplace<InfoBox>();
     title.setString("Main Menu");
     title.setSize({0.f, 50.f});
 
     auto& start = m_root.emplace<Button>();
     start.setString("Start");
     start.setSize({0.f, 60.f});
-    start.setOnClick([this, &font, windowSize]() {
-        m_stack.push(std::make_unique<GameState>(m_stack, font, windowSize));
+    start.setOnClick([this]() {
+        m_stack.push(std::make_unique<GameState>(m_stack, *m_theme.font, m_windowSize));
     });
 
     auto& exit = m_root.emplace<Button>();
@@ -51,6 +51,7 @@ void MainMenuState::render(sf::RenderTarget& target) {
 }
 
 void MainMenuState::onResize(sf::Vector2u s) {
+    m_windowSize = s;
     m_root.setSize({(float)s.x - 40.f, (float)s.y - 40.f});
 
     m_layout.apply(m_root);

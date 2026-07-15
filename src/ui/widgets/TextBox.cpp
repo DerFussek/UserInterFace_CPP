@@ -1,9 +1,6 @@
 #include "ui/widgets/TextBox.h"
 #include "ui/UIContext.h"
-
-static bool pointIn(const sf::FloatRect& r, sf::Vector2f p) {
-    return r.contains(p);
-}
+#include "ui/UIUtils.h"
 
 bool TextBox::handleEvent(const sf::Event& e, UIContext& ctx) {
     if (!m_visible || !m_enabled) return false;
@@ -13,7 +10,7 @@ bool TextBox::handleEvent(const sf::Event& e, UIContext& ctx) {
         const auto* mb = e.getIf<sf::Event::MouseButtonPressed>();
         if (mb->button == sf::Mouse::Button::Left) {
             const sf::Vector2f mp{(float)mb->position.x, (float)mb->position.y};
-            const bool inside = pointIn(bounds(), mp);
+            const bool inside = ui::pointIn(bounds(), mp);
             if (inside) ctx.focused = this;
             else if (ctx.focused == this) ctx.focused = nullptr;
             return inside;
@@ -51,9 +48,9 @@ bool TextBox::handleEvent(const sf::Event& e, UIContext& ctx) {
     return false;
 }
 
-void TextBox::draw(sf::RenderTarget& t, UIContext& ctx) const {
+void TextBox::draw(sf::RenderTarget& t, const UIContext& ctx) const {
     sf::RectangleShape r;
-    r.setPosition(m_pos);                  // FIX
+    r.setPosition(m_pos);
     r.setSize(m_size);
     r.setOutlineThickness(ctx.theme.outlineThickness);
     r.setOutlineColor(ctx.theme.outlineColor);
@@ -63,15 +60,5 @@ void TextBox::draw(sf::RenderTarget& t, UIContext& ctx) const {
 
     t.draw(r);
 
-    if (!ctx.theme.font) return;
-
-    sf::Text txt(*ctx.theme.font, m_string);
-    txt.setCharacterSize(m_charSize ? m_charSize : ctx.theme.fontSize);
-    txt.setFillColor(ctx.theme.textColor);
-
-    // Links innen ausrichten (typisch für TextBox), nicht zentrieren
-    const float leftPad = ctx.theme.padding;
-    txt.setPosition({m_pos.x + leftPad, m_pos.y + (m_size.y - (float)txt.getCharacterSize()) * 0.5f});
-
-    t.draw(txt);
+    drawTextLeft(t, ctx, ctx.theme.padding, true);
 }

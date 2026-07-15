@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\core\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\core\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -17,6 +20,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\HBoxLayout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\TextWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\tildu\Documents\GitHub\UserInterFace_CPP\src\ui\VBoxLayout.cpp">
